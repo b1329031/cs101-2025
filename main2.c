@@ -1,18 +1,21 @@
+#include <stdio.h>
+#include <ctype.h>
 
-C Online Compiler
+void run_length_encoding(const char *input){
+    for(int i = 0; input[i] != '\0'; i += 2){
+        char current = input[i];
+        int count = input[i + 1] - '0';
 
-Programiz PRO ❯
-main.c
+        for(int j = 0; j < count; j++){
+            putchar(current);
+        }
+    }
+    printf("\n");
+}
 
+int main(){
+    char a[] = "A4B3C3f3";
+    run_length_encoding(a);
+    return 0;
 
-Share
-
- Run 
-    printf("first %d + last %d = %d", first, last, first+last);
-
-
-Output
- Clear 
-=== Code Execution Successful ===
-
-
+}
