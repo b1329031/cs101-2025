@@ -1,10 +1,18 @@
 #include <stdio.h>
+#include <string.h>
 
-int main() {
-    for(int i = 1, j = 0; i<=9;){
-        printf("%d*%d=%d\t", i, j, i*++j);
-        (j==9)?(i++, j=0, printf("\n")) : i;
+void reverse_string(char *str){
+    int len = strlen(str);
+    for(int i = 0; i < len / 2; i ++){
+        char temp = str[i];
+        str[i] = str[len - i - 1];
+        str[len -i -1] = temp;
     }
+}
 
+int main(){
+    char a[] = "HELLO";
+    reverse_string(a);
+    printf("%s\n", a);
     return 0;
 }
